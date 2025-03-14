@@ -1,0 +1,2 @@
+# Home_Assistant-Obracun_porabe_elektricne_energije_po_novem-2025_Prikaz_porabe_za_prejsnji_mesec
+Obračun porabe električnne energije po novem 2025-Prikaz porabe za prejšnji mesec
