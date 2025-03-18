@@ -110,10 +110,11 @@ Ta koda dela poizvedbo v podatkovni datoteki home assistant `(home-assistant_v2.
 ```yaml
 recorder:
   purge_keep_days: 1.095
+  purge_interval: 7
   db_url: sqlite:///home-assistant_v2.db
 ```
 
-kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni. 
+kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni in da bo vsakih 7 dni brisalo starejše zapise od 1.095 dni. 
 
 *****************************************************************************************
 
