@@ -672,3 +672,32 @@ cards:
 title: Prejšnji mesec
 ```
 
+# Malo pojasnitve in zmedenosti!
+
+Ob prehodu iz meseca `februarja` v `marec` smo prešli iz `višje sezone` v `nižjo sezono` istočasno je prenehal veljati `blok 3` in je začel veljati `blok 5`, ker je začetek meseca obenem bil `dela proti dan` (sobota)!
+![Časovni bloki](https://github.com/user-attachments/assets/3bfdcaac-2eb1-446b-bfa9-c1fb50fbfbcc)
+
+Torej, če uporabim malo prirejeno SQL poizvedbo lahko ugotovim, da se podatki shranjujejo v podatkovno bazo `vsako uro`:
+
+![20250316-SQL sensor tarife_p1_meter_faza3_mesecno_5-Na uro](https://github.com/user-attachments/assets/e39aca20-caa1-4fac-bff8-2a6901ca54bb)
+
+
+![20250316-SQL sensor tarife_p1_meter_faza3_mesecno_3-Na uro](https://github.com/user-attachments/assets/d40f55be-0021-4ed8-aef3-bd4cb3199e45)
+
+Kot se da opaziti je logično, da je zadnji zapis za prejšnji mesec `2025-03-01 00:00:00` ker so entitete `sensor.tarife_p1_meter_faza3_mesecno_3` in podobne mesečne komulative.
+
+Iz meni neznanega razloga je za entiteto `sensor.tarife_p1_meter_faza3_mesecno_5` ravno tako prvi zapis `2025-03-01 00:00:00` kar ni logično, ker bi pričakoval, da bo prvi zapis zapisan `2025-03-01 01:00:00`.
+
+Zaradi tega lahko pri izračuni pride do male napake:
+
+![20250313-SQL query](https://github.com/user-attachments/assets/57a4bb7b-3457-4ed4-88b3-58a34fef19fe).
+
+Da bi se izognil napakam pri izračunu sem v datoteki `elektrika_cenik_prejsnji.yaml` za `blok 5` postavil ceno 0 EUR pri izpisu pa ga ne prikažem.
+
+Po raznih forumih sem iskal pomoč oziroma pojasnitev zakaj se to dogaja, a zaman.
+
+Morda toliko, da preverite logiko podatkov:
+![20250313-SQL query prejšnji mesec več entitet](https://github.com/user-attachments/assets/cc25b780-852b-45cf-b940-99985d16b916)
+
+
+
