@@ -114,7 +114,7 @@ recorder:
   db_url: sqlite:///home-assistant_v2.db
 ```
 
-kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni in da bo vsakih 7 dni brisalo starejše zapise od 1.095 dni. 
+kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni in da bo vsakih 7 dni brisalo starejše zapise od 1.095 dni. To sem naredil zato, da nebi imel prevelike podatkovne baze.
 
 *****************************************************************************************
 
