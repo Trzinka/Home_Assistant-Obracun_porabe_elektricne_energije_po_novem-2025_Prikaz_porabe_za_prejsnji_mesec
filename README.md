@@ -109,7 +109,7 @@ Ta koda dela poizvedbo v podatkovni datoteki home assistant `(home-assistant_v2.
 
 ```yaml
 recorder:
-  purge_keep_days: 1.095
+  purge_keep_days: 1095
   purge_interval: 7
   db_url: sqlite:///home-assistant_v2.db
 ```
