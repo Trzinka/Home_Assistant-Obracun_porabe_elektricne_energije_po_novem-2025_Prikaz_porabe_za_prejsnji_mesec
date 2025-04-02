@@ -6,6 +6,7 @@ V `configuration.yaml` dodajte `sql: !include sql.yaml` in v korenskem imeniku n
 
 V datoteko `sql.yaml` dodajte:
 
+Popravljeno 02.04.2025
 ```yaml
 - name: "Prejšnji mesec P1 meter faza3 mesečno"
   query: >
@@ -15,7 +16,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.p1_meter_phase_3_mesecno_kwh'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -31,7 +33,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_1'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -47,7 +50,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_2'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -63,7 +67,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_3'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -79,7 +84,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_4'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -95,7 +101,8 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_5'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -116,6 +123,8 @@ recorder:
 
 kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) in da bo vsakih 7 dni brisalo starejše zapise od 1.095 dni. 
 Privzeta vrednost je 10, kar pomeni, da se podatki hranijo do 10 dni.
+
+Nastavite vsaj 62.
 
 *****************************************************************************************
 
