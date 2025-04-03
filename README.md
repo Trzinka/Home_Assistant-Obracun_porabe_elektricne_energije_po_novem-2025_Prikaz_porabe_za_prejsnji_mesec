@@ -123,9 +123,9 @@ recorder:
 ```
 
 kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) in da bo vsakih 7 dni brisalo starejše zapise od 1.095 dni. 
-Privzeta vrednost je 10, kar pomeni, da se podatki hranijo do 10 dni.
+🟢 Privzeta vrednost je 10, kar pomeni, da se podatki hranijo do 10 dni.
 
-Nastavite vsaj 62.
+🔵 Nastavite vsaj 62.
 
 *****************************************************************************************
 
