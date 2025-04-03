@@ -114,7 +114,7 @@ V datoteko `sql.yaml` dodajte:
 Ta koda dela poizvedbo v podatkovni datoteki home assistant `(home-assistant_v2.db)`
 Če želite dodajte v `configuration.yaml` sledeč:
 
-**Popravljeno 02.04.2025**
+🔴 **Popravljeno 02.04.2025**
 ```yaml
 recorder:
   purge_keep_days: 1095
