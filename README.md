@@ -6,7 +6,7 @@ V `configuration.yaml` dodajte `sql: !include sql.yaml` in v korenskem imeniku n
 
 V datoteko `sql.yaml` dodajte:
 
-<span style="color:red">Popravljeno 02.04.2025</span>
+**Popravljeno 02.04.2025**
 ```yaml
 - name: "Prejšnji mesec P1 meter faza3 mesečno"
   query: >
