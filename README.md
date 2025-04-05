@@ -6,7 +6,7 @@ V `configuration.yaml` dodajte `sql: !include sql.yaml` in v korenskem imeniku n
 
 V datoteko `sql.yaml` dodajte:
 
-🔴 **Popravljeno 02.04.2025**
+🔴 **Popravljeno 05.04.2025**
 ```yaml
 - name: "Prejšnji mesec P1 meter faza3 mesečno"
   query: >
@@ -17,7 +17,7 @@ V datoteko `sql.yaml` dodajte:
     WHERE sm.statistic_id = 'sensor.p1_meter_phase_3_mesecno_kwh'
       AND s.state IS NOT NULL
       AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
-      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day') 
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -33,7 +33,7 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_1'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
       AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
@@ -50,7 +50,7 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_2'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
       AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
@@ -68,7 +68,7 @@ V datoteko `sql.yaml` dodajte:
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_3'
       AND s.state IS NOT NULL
       AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
-      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day') 
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
     ORDER BY s.start_ts DESC
@@ -84,7 +84,7 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_4'
       AND s.state IS NOT NULL
-      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
       AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
@@ -101,7 +101,111 @@ V datoteko `sql.yaml` dodajte:
     JOIN statistics_meta sm ON s.metadata_id = sm.id
     WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza3_mesecno_5'
       AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+#===========================================================================
+# FAZA 2
+#===========================================================================
+- name: "Prejšnji mesec P1 meter faza2 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.p1_meter_phase_2_mesecno_kwh'
+      AND s.state IS NOT NULL
       AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day') 
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+#===========================================================================
+- name: "Prejšnji mesec P1 meter faza2 blok1 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza2_mesecno_1'
+      AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+
+- name: "Prejšnji mesec P1 meter faza2 blok2 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza2_mesecno_2'
+      AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+
+- name: "Prejšnji mesec P1 meter faza2 blok3 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza2_mesecno_3'
+      AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second')
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day') 
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+
+- name: "Prejšnji mesec P1 meter faza2 blok4 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza2_mesecno_4'
+      AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
+      AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
+      AND s.state > 0
+    GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
+    ORDER BY s.start_ts DESC
+    LIMIT 1;
+  column: 'state'
+  unit_of_measurement: "kWh"
+
+- name: "Prejšnji mesec P1 meter faza2 blok5 mesečno"
+  query: >
+    SELECT 
+    CAST(Round(MAX(s.state), 0) AS INTEGER) AS state
+    FROM statistics s
+    JOIN statistics_meta sm ON s.metadata_id = sm.id
+    WHERE sm.statistic_id = 'sensor.tarife_p1_meter_faza2_mesecno_5'
+      AND s.state IS NOT NULL
+      AND s.start_ts <= strftime('%s', 'now', 'start of month', '-1 second') 
       AND s.start_ts > strftime('%s', 'now', 'start of month', '-2 day')
       AND s.state > 0
     GROUP BY strftime('%Y-%m-%d', datetime(s.start_ts, 'unixepoch'))
