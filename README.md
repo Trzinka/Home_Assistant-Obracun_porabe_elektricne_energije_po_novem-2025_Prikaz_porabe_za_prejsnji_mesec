@@ -133,7 +133,7 @@ kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) i
 ![Sensors](https://github.com/user-attachments/assets/9f5979c0-de7b-487e-9a92-6b2c80028b0c)
 
 
-V mapi `share` in podmapi `sensors` ustvarite datoteke `dogovorjena_moc_polovica.yaml`, `elektrika_cenik_prejsnji.yaml`, `elektrika_obracun_prejsnji.yaml` in še `dogovorjena_moc_polovica.yaml` in `elektrika_obracun_prejsnji_grm.yaml`, če živite v dvo družinski hiši in delite izračun.
+V mapi `share` in podmapi `sensors` ustvarite datoteke `dogovorjena_moc_polovica.yaml`, `elektrika_cenik_prejsnji.yaml`, `elektrika_obracun_prejsnji.yaml`, `dogovorjena_moc_polovica.yaml` in `elektrika_obracun_prejsnji_grm.yaml`, če živite v dvo družinski hiši in delite izračun.
 
 V datoteko `dogovorjena_moc_polovica.yaml` vpišite:
 
