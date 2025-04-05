@@ -112,7 +112,7 @@ V datoteko `sql.yaml` dodajte:
 ```
 
 Ta koda dela poizvedbo v podatkovni datoteki home assistant `(home-assistant_v2.db)`
-Če želite dodajte v `configuration.yaml` sledeč:
+Priporočam da dodate v `configuration.yaml` sledeč:
 
 🔴 **Popravljeno 02.04.2025**
 ```yaml
@@ -126,7 +126,7 @@ kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) i
 
 🟢 Privzeta vrednost je 10, kar pomeni, da se podatki hranijo do 10 dni.
 
-🔵 Nastavite vsaj 62.
+🔵 **Nastavite vsaj 62.**
 
 *****************************************************************************************
 
