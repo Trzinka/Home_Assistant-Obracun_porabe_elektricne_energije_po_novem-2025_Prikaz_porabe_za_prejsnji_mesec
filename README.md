@@ -234,7 +234,7 @@ kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) i
 
 *****************************************************************************************
 
-Razlika je sledeča:
+**Razlika je sledeča:**
 ![Zgodovina](https://github.com/user-attachments/assets/bf1eec58-4777-463b-ac68-b9c63cfcbf16)
 
 
