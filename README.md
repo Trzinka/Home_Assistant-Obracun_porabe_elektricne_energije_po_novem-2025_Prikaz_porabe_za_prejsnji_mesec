@@ -1577,7 +1577,9 @@ Za vse ki želite preveriti pravilnost izračuna je tu še delni izpis računa E
 ![202503_Stran_2](https://github.com/user-attachments/assets/04141fdb-af3d-421e-a373-01c8afff8f64)
 
 
+*****************************************************************************************
 # Malo pojasnitve in zmedenosti!
+*****************************************************************************************
 
 Ob prehodu iz meseca `februarja` v `marec` smo prešli iz `višje sezone` v `nižjo sezono` istočasno je prenehal veljati `blok 3` in je začel veljati `blok 5`, ker je začetek meseca obenem bil `dela proti dan` (sobota)!
 ![Časovni bloki](https://github.com/user-attachments/assets/3bfdcaac-2eb1-446b-bfa9-c1fb50fbfbcc)
