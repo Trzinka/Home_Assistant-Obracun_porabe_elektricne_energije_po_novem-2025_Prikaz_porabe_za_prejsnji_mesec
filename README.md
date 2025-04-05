@@ -135,6 +135,56 @@ kar bo omogočilo hranjenje podatkov za v mojem primeru 1.095 dni (cca 3 leta) i
 
 V mapi `share` in podmapi `sensors` ustvarite datoteke `dogovorjena_moc_polovica.yaml`, `elektrika_cenik_prejsnji.yaml`, `elektrika_obracun_prejsnji.yaml` in še `dogovorjena_moc_polovica.yaml` in `elektrika_obracun_prejsnji_grm.yaml`, če živite v dvo družinski hiši in delite izračun.
 
+V datoteko `dogovorjena_moc_polovica.yaml` vpišite:
+
+```yaml
+- platform: template
+  sensors:
+    moj_elektro_casovni_blok_1_polovica:
+      friendly_name: "Moj Elektro Casovni Blok 1 Polovica"
+      unit_of_measurement: "kW"
+      device_class: power
+      value_template: "{{ states('sensor.prejsnja_dogovorjena_moc_casovni_blok_1') | float }}"
+      unique_id: 4525ad63-7144-4ba8-95f6-7aa649b3879c
+
+- platform: template
+  sensors:
+    moj_elektro_casovni_blok_2_polovica:
+      friendly_name: "Moj Elektro Casovni Blok 2 Polovica"
+      unit_of_measurement: "kW"
+      device_class: power
+      value_template: "{{ states('sensor.prejsnja_dogovorjena_moc_casovni_blok_2') | float }}"
+      unique_id: 4301a898-a54c-411c-ba1a-1759e8f0676d
+
+- platform: template
+  sensors:
+    moj_elektro_casovni_blok_3_polovica:
+      friendly_name: "Moj Elektro Casovni Blok 3 Polovica"
+      unit_of_measurement: "kW"
+      device_class: power
+      value_template: "{{ states('sensor.prejsnja_dogovorjena_moc_casovni_blok_3') | float }}"
+      unique_id: 38be6300-1de6-4a0c-a24e-b78abbcb6dfb
+
+- platform: template
+  sensors:
+    moj_elektro_casovni_blok_4_polovica:
+      friendly_name: "Moj Elektro Casovni Blok 4 Polovica"
+      unit_of_measurement: "kW"
+      device_class: power
+      value_template: "{{ states('sensor.prejsnja_dogovorjena_moc_casovni_blok_4') | float }}"
+      unique_id: 9b0c24d9-e872-479b-81a1-d2df008e2162
+
+- platform: template
+  sensors:
+    moj_elektro_casovni_blok_5_polovica:
+      friendly_name: "Moj Elektro Casovni Blok 5 Polovica"
+      unit_of_measurement: "kW"
+      device_class: power
+      value_template: "{{ states('sensor.prejsnja_dogovorjena_moc_casovni_blok_5') | float }}"
+      unique_id: c17ef3b7-63bd-499a-a57d-08b870b11414
+```
+
+
 V datoteko `elektrika_cenik_prejsnji.yaml` vpišite:
 
 ```yaml
