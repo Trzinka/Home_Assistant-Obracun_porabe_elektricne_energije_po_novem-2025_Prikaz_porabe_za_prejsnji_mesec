@@ -1607,4 +1607,6 @@ Morda toliko, da preverite logiko podatkov:
 ![20250313-SQL query prejšnji mesec več entitet](https://github.com/user-attachments/assets/cc25b780-852b-45cf-b940-99985d16b916)
 
 
-
+# 📜 Licenca  
+Ta dela so prosto dostopna za vsako uporabo brez omejitev.  
+Avtor ne zahteva atribucije, vendar je hvaležen za povratne informacije.
