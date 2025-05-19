@@ -1,3 +1,7 @@
+## 📜 Licenca  
+Ta dela so prosto dostopna za vsako uporabo brez omejitev.  
+Avtor ne zahteva atribucije, vendar je hvaležen za povratne informacije.
+
 # Ta git je nadgradnja https://github.com/Trzinka/Home_Assistant-Obracun_porabe_elektricne_energije_po_novem-2025, ki ga morate predhodno prilagoditi svojim potrebam!
 
 V `configuration.yaml` dodajte `sql: !include sql.yaml` in v korenskem imeniku naredite datoteko `sql.yaml` kot prikazuje slika.
